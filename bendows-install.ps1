@@ -17,6 +17,9 @@ try {
         winget install Git.Git -s winget
         winget install Figma.Figma -s winget
 
+        Write-Output "Removing McAfee"
+        winget uninstall MSC
+
         Write-Output "Installing WSL, reboot will be required"
         wsl --install
     }
