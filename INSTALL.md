@@ -29,3 +29,16 @@ winget install Figma.Figma -s winget
 ln -sf Repos/bendows/.gitconfig /c/Users/hayde/.gitconfig
 ln -sf Repos/bendows/.bashrc /c/Users/hayde/.bashrc
 ```
+
+## Fix libcuda warning
+
+Fix from [this GitHub issue](https://github.com/microsoft/WSL/issues/5548#issuecomment-912495487)
+
+- Open cmd as Administrator and cd into C:\Windows\System32\lxss\lib
+- Delete libcuda.so and libcuda.so.1 (You can also do this in Windows Explorer as well)
+- Run wsl -e /bin/bash in cmd and you should already in /mnt/c/Windows/System32/lxss/lib, now you have permission to create symlink:
+
+  ```shell
+  ln -s libcuda.so.1.1 libcuda.so.1
+  ln -s libcuda.so.1.1 libcuda.so
+  ```
