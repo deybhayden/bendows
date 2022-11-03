@@ -42,3 +42,7 @@ Fix from [this GitHub issue](https://github.com/microsoft/WSL/issues/5548#issuec
   ln -s libcuda.so.1.1 libcuda.so.1
   ln -s libcuda.so.1.1 libcuda.so
   ```
+
+## Installing NordLayer
+
+NordLayer isn't available on winget, so go here: [Nordlayer Windows Download](https://nordlayer.com/download/windows/)
