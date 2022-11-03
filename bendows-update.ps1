@@ -10,4 +10,3 @@ try {
 } catch {
     "winget is not available. Update AppInstaller in the AppStore before running again."
 }
-
