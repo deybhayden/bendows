@@ -13,6 +13,7 @@ try {
         winget install Zoom.Zoom -s winget
         winget install Logitech.OptionsPlus -s winget
         winget install Google.Chrome -s winget
+        winget install Google.Drive -s winget
         winget install Docker.DockerDesktop -s winget
         winget install Git.Git -s winget
         winget install Figma.Figma -s winget
