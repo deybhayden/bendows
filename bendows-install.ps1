@@ -6,7 +6,8 @@
 try {
     if (Get-Command winget) {
         Write-Output "Installing core packages via winget"
-        winget install Microsoft.VSCode -s winget
+        winget install Microsoft.VSCode -s winget 
+        winget install Microsoft.Powershell -s winget
         winget install Microsoft.PowerToys -s winget
         winget install Microsoft.Teams -s winget
         winget install SlackTechnologies.Slack -s winget
