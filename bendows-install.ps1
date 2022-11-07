@@ -18,6 +18,7 @@ try {
         winget install Docker.DockerDesktop -s winget
         winget install Git.Git -s winget
         winget install Figma.Figma -s winget
+        winget install PostgreSQL.pgAdmin -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
