@@ -19,6 +19,7 @@ try {
         winget install Git.Git -s winget
         winget install Figma.Figma -s winget
         winget install PostgreSQL.pgAdmin -s winget
+        winget install Postman.Postman -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
@@ -26,6 +27,7 @@ try {
         Write-Output "Installing WSL, reboot will be required"
         wsl --install
     }
-} catch {
+}
+catch {
     "winget is not available. Update AppInstaller in the AppStore before running again."
 }
