@@ -46,3 +46,17 @@ Fix from [this GitHub issue](https://github.com/microsoft/WSL/issues/5548#issuec
 ## Installing NordLayer
 
 NordLayer isn't available on winget, so go here: [Nordlayer Windows Download](https://nordlayer.com/download/windows/)
+
+### DNS
+
+To prevent intermittent network errors on Windows, set up manual DNS on the PC. Google's Values are below (enable DNS over SSL)
+
+```shell
+# IPv4
+8.8.8.8
+8.8.4.4
+
+# IPv6
+2001:4860:4860::8888
+2001:4860:4860::8844
+```
