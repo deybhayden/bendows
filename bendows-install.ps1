@@ -20,6 +20,7 @@ try {
         winget install Figma.Figma -s winget
         winget install PostgreSQL.pgAdmin -s winget
         winget install Postman.Postman -s winget
+        winget install Armin2208.WindowsAutoNightMode -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
