@@ -22,6 +22,7 @@ try {
         winget install Postman.Postman -s winget
         winget install Armin2208.WindowsAutoNightMode -s winget
         winget install beekeeper-studio.beekeeper-studio -s winget
+        winget install Putty.Putty -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
