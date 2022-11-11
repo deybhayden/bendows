@@ -21,6 +21,7 @@ try {
         winget install PostgreSQL.pgAdmin -s winget
         winget install Postman.Postman -s winget
         winget install Armin2208.WindowsAutoNightMode -s winget
+        winget install beekeeper-studio.beekeeper-studio -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
