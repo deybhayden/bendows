@@ -60,3 +60,7 @@ To prevent intermittent network errors on Windows, set up manual DNS on the PC. 
 2001:4860:4860::8888
 2001:4860:4860::8844
 ```
+
+## Add Explorer 'Open with Code'
+
+Double click the `vscode.reg` file to add an option in Explorer to open a folder in VS Code.
