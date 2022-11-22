@@ -23,6 +23,7 @@ try {
         winget install Armin2208.WindowsAutoNightMode -s winget
         winget install beekeeper-studio.beekeeper-studio -s winget
         winget install Putty.Putty -s winget
+        winget install Microsoft.DotNet.SDK.6 -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
