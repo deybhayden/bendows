@@ -63,4 +63,4 @@ To prevent intermittent network errors on Windows, set up manual DNS on the PC. 
 
 ## Add Explorer 'Open with Code'
 
-Double click the `vscode.reg` file to add an option in Explorer to open a folder in VS Code.
+Double click the `shell-vscode.reg` and `background-vscode.reg` files to add an option in Explorer to open a folder in VS Code.
