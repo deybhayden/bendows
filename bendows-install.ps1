@@ -18,7 +18,6 @@ try {
         winget install Docker.DockerDesktop -s winget
         winget install Git.Git -s winget
         winget install Figma.Figma -s winget
-        winget install PostgreSQL.pgAdmin -s winget
         winget install Postman.Postman -s winget
         winget install Armin2208.WindowsAutoNightMode -s winget
         winget install beekeeper-studio.beekeeper-studio -s winget
