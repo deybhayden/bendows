@@ -4,6 +4,7 @@ This is a set of install notes and scripts for setting up Windows 11 with VS Cod
 
 - [INSTALL](./INSTALL.md)
 - [bendows-install.ps1](./bendows-install.ps1)
+- [VISUAL_STUDIO](./VISUAL_STUDIO.md)
 
 ## usage
 
