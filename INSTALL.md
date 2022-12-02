@@ -10,7 +10,6 @@ winget install vscode
 open vscode, sign into GitHub for settings sync
 winget install slack -s winget
 plugin logitech mouse, install logi options
-winget install Google.Chrome
 wsl --install
 reboot
 winget install Zoom.Zoom
