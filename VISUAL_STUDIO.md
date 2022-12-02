@@ -14,3 +14,5 @@ $ winget install "Visual Studio Community 2022"  --override "--add Microsoft.Vis
 ## Extensions
 
 - [GitHub Themes](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.GitHubThemes)
+- [Template Studio for WinUI](https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForWinUICs)
+- [Markdown Editor](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.MarkdownEditor2)
