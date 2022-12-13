@@ -25,7 +25,7 @@ winget install Figma.Figma -s winget
 ```shell
 # copy .bash_profile to home directory
 # open git bash as an admin
-ln -sf Repos/bendows/.gitconfig /c/Users/hayde/.gitconfig
+cp Repos/bendows/.gitconfig /c/Users/hayde/.gitconfig
 ln -sf Repos/bendows/.bashrc /c/Users/hayde/.bashrc
 ```
 
