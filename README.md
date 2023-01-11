@@ -5,7 +5,9 @@ This is a set of install notes and scripts for setting up Windows 11 with VS Cod
 - [INSTALL](./INSTALL.md)
 - [bendows-install.ps1](./bendows-install.ps1)
 
-## usage
+If you want some PowerShell functions and utilities check out [PSBendows](https://github.com/deybhayden/PSBendows).
+
+## Usage
 
 ```powershell
 # installing
