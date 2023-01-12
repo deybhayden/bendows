@@ -40,7 +40,7 @@ gpgsign = true
 defaultBranch = main
 
 [gpg]
-program = gpg
+program = "C:/Program Files/Git/usr/bin/gpg.exe"
 
 [filter "media"]
 clean = git-media-clean %f
@@ -55,3 +55,6 @@ cmd = code --wait --diff $LOCAL $REMOTE
 tool = vscode
 [mergetool "vscode"]
 cmd = code --wait $MERGED
+
+[credential]
+helper = "C:/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe"
