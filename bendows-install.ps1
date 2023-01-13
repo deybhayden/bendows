@@ -24,6 +24,7 @@ try {
         winget install Putty.Putty -s winget
         winget install Microsoft.DotNet.SDK.6 -s winget
         winget install "Visual Studio Community 2022"  --override "--add Microsoft.VisualStudio.Workload.ManagedDesktop Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cs" -s msstore
+        winget install GIMP.GIMP -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
