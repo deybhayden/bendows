@@ -6,13 +6,16 @@ winget install "Visual Studio Community 2022"  --override "--add Microsoft.Visua
 
 ## Themes
 
-"Use System Setting" is what I want long term, but until you can choose the Light & Dark themes for VS, it must be set manually for now because it picks "Blue" as the default Light theme vs "Light".
+"Use System Setting" is what I want long term, but until you can choose the Light & Dark themes for VS, it must be set manually for now because it picks "Blue" as the default Light theme.
 
 - [Flexible VS Themes](https://devblogs.microsoft.com/visualstudio/flexible-theming-visual-studio/#set-your-visual-studio-theme-to-match-windows-theme)
 - [Pick custom themes to coordinate with system settings](https://developercommunity.visualstudio.com/t/Pick-custom-themes-to-coordinate-with-sy/1493853?space=8)
 
 ## Extensions
 
+- [VS Theme Pack](https://marketplace.visualstudio.com/items?itemName=idex.vsthemepack)
 - [Template Studio for WinUI](https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForWinUICs)
 - [Markdown Editor](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.MarkdownEditor2)
 - [Italics](https://marketplace.visualstudio.com/items?itemName=EmilyKGehman.italics)
+- [Open in VS Code](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.OpeninVisualStudioCode)
+- [Xaml Styler](https://marketplace.visualstudio.com/items?itemName=TeamXavalon.XAMLStyler)
