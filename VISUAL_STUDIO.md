@@ -15,6 +15,6 @@ winget install "Visual Studio Community 2022"  --override "--add Microsoft.Visua
 
 - [VS Theme Pack](https://marketplace.visualstudio.com/items?itemName=idex.vsthemepack)
 - [Template Studio for WinUI](https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForWinUICs)
-- [Markdown Editor](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.MarkdownEditor2)
 - [Open in VS Code](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.OpeninVisualStudioCode)
 - [Xaml Styler](https://marketplace.visualstudio.com/items?itemName=TeamXavalon.XAMLStyler)
+- [AWS Toolkit for Visual Studio](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.AWSToolkitforVisualStudio2022)
