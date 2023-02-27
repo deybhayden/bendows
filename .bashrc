@@ -7,7 +7,9 @@ export EDITOR="code -w"
 alias src="source $HOME/.bash_profile"
 
 # directories
+alias ..="cd .."
 alias .r="cd ~/Repos"
+alias .v='cd "'$VSCODE_WORKSPACE_FOLDER'"'
 
 # git
 alias g="git"
