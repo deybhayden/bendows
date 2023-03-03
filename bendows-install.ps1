@@ -26,7 +26,6 @@ try {
         winget install GIMP.GIMP -s winget
         winget install OpenJS.NodeJS.LTS -s winget
         winget install Python.Python.3.10 -s winget
-        winget install SumatraPDF.SumatraPDF -s winget
         winget install Amazon.AWSCLI -s winget
 
         Write-Output "Removing McAfee"
