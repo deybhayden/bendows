@@ -13,8 +13,13 @@ winget install "Visual Studio Community 2022"  --override "--add Microsoft.Visua
 
 ## Extensions
 
-- [VS Theme Pack](https://marketplace.visualstudio.com/items?itemName=idex.vsthemepack)
 - [Template Studio for WinUI](https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForWinUICs)
 - [Open in VS Code](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.OpeninVisualStudioCode)
 - [Xaml Styler](https://marketplace.visualstudio.com/items?itemName=TeamXavalon.XAMLStyler)
 - [AWS Toolkit for Visual Studio](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.AWSToolkitforVisualStudio2022)
+
+## Repair
+
+VS 2022 repair steps: https://docs.microsoft.com/en-us/visualstudio/install/repair-visual-studio?view=vs-2022
+
+It will remove some extensions, but not all. Several settings are set back to default as well. But fixed the 17.5.3 upgrade hanging on solution load.
