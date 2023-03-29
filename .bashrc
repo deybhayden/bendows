@@ -5,11 +5,16 @@ export EDITOR="code -w"
 
 # misc
 alias src="source $HOME/.bash_profile"
+alias tf="terraform"
+alias kc="kubectl"
 
 # directories
 alias ..="cd .."
 alias .r="cd ~/Repos"
-alias .v='cd "'$VSCODE_WORKSPACE_FOLDER'"'
+function .v() {
+  folder=$(cygpath.exe "$VSCODE_WORKSPACE_FOLDER")
+  cd "$folder"
+}
 
 # git
 alias g="git"
