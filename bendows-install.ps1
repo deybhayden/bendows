@@ -28,6 +28,7 @@ try {
         winget install Python.Python.3.10 -s winget
         winget install Amazon.AWSCLI -s winget
         winget install Keybase.Keybase -s winget
+        winget install Hashicorp.Terraform -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
