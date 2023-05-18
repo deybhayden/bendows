@@ -29,6 +29,10 @@ try {
         winget install Amazon.AWSCLI -s winget
         winget install Keybase.Keybase -s winget
         winget install Hashicorp.Terraform -s winget
+        winget install TeamViewer.TeamViewer -s winget
+        winget install OBSProject.OBSStudio -s winget
+        winget install 7zip.7zip -s winget
+        winget install Mozilla.Firefox -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
