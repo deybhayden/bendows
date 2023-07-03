@@ -16,6 +16,7 @@ try {
         winget install Google.Drive -s winget
         winget install Docker.DockerDesktop -s winget
         winget install Git.Git -s winget
+        winget install GitHub.cli -s winget
         winget install Figma.Figma -s winget
         winget install Postman.Postman -s winget
         winget install Armin2208.WindowsAutoNightMode -s winget
@@ -33,6 +34,7 @@ try {
         winget install OBSProject.OBSStudio -s winget
         winget install 7zip.7zip -s winget
         winget install Mozilla.Firefox -s winget
+        winget install VideoLAN.VLC -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
