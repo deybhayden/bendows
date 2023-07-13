@@ -15,6 +15,7 @@ try {
         winget install Logitech.OptionsPlus -s winget
         winget install Google.Drive -s winget
         winget install Docker.DockerDesktop -s winget
+        winget install direnv.direnv -s winget
         winget install Git.Git -s winget
         winget install GitHub.cli -s winget
         winget install Figma.Figma -s winget
