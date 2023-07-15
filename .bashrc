@@ -61,3 +61,6 @@ function gsmash() {
   git commit -a --no-edit --amend
   git push origin "$(git_current_branch)" --force-with-lease
 }
+
+# hooks
+eval "$(direnv hook bash)"
