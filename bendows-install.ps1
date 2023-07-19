@@ -37,6 +37,7 @@ try {
         winget install 7zip.7zip -s winget
         winget install Mozilla.Firefox -s winget
         winget install VideoLAN.VLC -s winget
+        winget install OpenVPNTechnologies.OpenVPN -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
