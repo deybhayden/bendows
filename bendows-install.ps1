@@ -38,6 +38,7 @@ try {
         winget install Mozilla.Firefox -s winget
         winget install VideoLAN.VLC -s winget
         winget install OpenVPNTechnologies.OpenVPN -s winget
+        winget install Microsoft.SQLServerManagementStudio -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
