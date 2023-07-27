@@ -39,6 +39,7 @@ try {
         winget install VideoLAN.VLC -s winget
         winget install OpenVPNTechnologies.OpenVPN -s winget
         winget install Microsoft.SQLServerManagementStudio -s winget
+        winget install Ngrok.Ngrok -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
