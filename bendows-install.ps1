@@ -40,6 +40,8 @@ try {
         winget install OpenVPNTechnologies.OpenVPN -s winget
         winget install Microsoft.SQLServerManagementStudio -s winget
         winget install Ngrok.Ngrok -s winget
+        winget install Microsoft.AzureCLI -s winget
+        winget install azcopy -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
