@@ -42,6 +42,7 @@ try {
         winget install Ngrok.Ngrok -s winget
         winget install Microsoft.AzureCLI -s winget
         winget install azcopy -s winget
+        winget install ScooterSoftware.BeyondCompare4 -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
