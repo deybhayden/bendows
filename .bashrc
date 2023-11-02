@@ -8,6 +8,7 @@ alias src="source $HOME/.bash_profile"
 alias tf="terraform"
 alias tf-gitlab-init="terraform init -backend-config=config.http.tfbackend -backend-config=\"username=deybhayden\" -backend-config=\"password=$GITLAB_TOKEN\""
 alias kc="kubectl"
+alias nr="npm run"
 
 # directories
 alias ..="cd .."
