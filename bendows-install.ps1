@@ -19,7 +19,7 @@ try {
         winget install direnv.direnv -s winget
         winget install Git.Git -s winget
         winget install GitHub.cli -s winget
-        winget install Figma.Figma -s winget
+        winget install JGraph.Draw -s winget
         winget install Postman.Postman -s winget
         winget install Armin2208.WindowsAutoNightMode -s winget
         winget install beekeeper-studio.beekeeper-studio -s winget
@@ -30,10 +30,10 @@ try {
         winget install OpenJS.NodeJS.LTS -s winget
         winget install Python.Python.3.10 -s winget
         winget install Amazon.AWSCLI -s winget
+        winget install Amazon.NoSQLWorkbench -s winget
         winget install Keybase.Keybase -s winget
         winget install Hashicorp.Terraform -s winget
         winget install TeamViewer.TeamViewer -s winget
-        winget install OBSProject.OBSStudio -s winget
         winget install 7zip.7zip -s winget
         winget install Mozilla.Firefox -s winget
         winget install VideoLAN.VLC -s winget
@@ -43,7 +43,6 @@ try {
         winget install Microsoft.AzureCLI -s winget
         winget install azcopy -s winget
         winget install ScooterSoftware.BeyondCompare4 -s winget
-        winget install JGraph.Draw -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
