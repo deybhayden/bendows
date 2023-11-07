@@ -43,6 +43,7 @@ try {
         winget install Microsoft.AzureCLI -s winget
         winget install azcopy -s winget
         winget install ScooterSoftware.BeyondCompare4 -s winget
+        winget install calibre.calibre -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
