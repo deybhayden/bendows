@@ -44,6 +44,7 @@ try {
         winget install azcopy -s winget
         winget install ScooterSoftware.BeyondCompare4 -s winget
         winget install calibre.calibre -s winget
+        winget install WiresharkFoundation.Wireshark -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
