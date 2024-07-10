@@ -7,7 +7,7 @@ signingkey = E43D20D19C59D6F8
 ui = true
 
 [core]
-autoclrf = input
+autoclrf = true
 excludesfile = ~/.gitignore_global
 attributesfile = ~/.gitattributes_global
 
