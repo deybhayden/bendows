@@ -6,6 +6,7 @@
 try {
     if (Get-Command winget) {
         Write-Output "Installing core packages via winget"
+        winget install Adobe.Acrobat.Reader.64-bit -s winget
         winget install Microsoft.VSCode -s winget 
         winget install Microsoft.Powershell -s winget
         winget install Microsoft.PowerToys -s winget
