@@ -47,6 +47,7 @@ try {
         winget install calibre.calibre -s winget
         winget install WiresharkFoundation.Wireshark -s winget
         winget install Microsoft.WinDbg -s winget
+        winget install CPUID.HWMonitor -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
