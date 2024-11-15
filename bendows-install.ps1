@@ -48,6 +48,7 @@ try {
         winget install WiresharkFoundation.Wireshark -s winget
         winget install Microsoft.WinDbg -s winget
         winget install CPUID.HWMonitor -s winget
+        winget install WinSCP.WinSCP -s winget
 
         Write-Output "Removing McAfee"
         winget uninstall MSC
