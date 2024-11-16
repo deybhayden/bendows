@@ -1,0 +1,199 @@
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "actions": [
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto",
+        "splitMode": "duplicate"
+      },
+      "id": "User.splitPane.A6751878"
+    },
+    {
+      "command": "find",
+      "id": "User.find"
+    },
+    {
+      "command": "paste",
+      "id": "User.paste"
+    },
+    {
+      "command": {
+        "action": "copy",
+        "singleLine": false
+      },
+      "id": "User.copy.644BA8F2"
+    },
+    {
+      "command": {
+        "action": "sendInput",
+        "input": "\n"
+      },
+      "id": "User.sendInput.DFCDAF06"
+    },
+    {
+      "command": {
+        "action": "sendInput",
+        "input": "\u0017"
+      },
+      "id": "User.sendInput.817164EE"
+    }
+  ],
+  "copyFormatting": "none",
+  "copyOnSelect": false,
+  "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+  "keybindings": [
+    {
+      "id": "User.paste",
+      "keys": "ctrl+v"
+    },
+    {
+      "id": "User.find",
+      "keys": "ctrl+shift+f"
+    },
+    {
+      "id": "User.copy.644BA8F2",
+      "keys": "ctrl+c"
+    },
+    {
+      "id": "User.sendInput.DFCDAF06",
+      "keys": "shift+enter"
+    },
+    {
+      "id": "User.splitPane.A6751878",
+      "keys": "alt+shift+d"
+    },
+    {
+      "id": "User.sendInput.817164EE",
+      "keys": "ctrl+backspace"
+    }
+  ],
+  "newTabMenu": [
+    {
+      "type": "remainingProfiles"
+    }
+  ],
+  "profiles": {
+    "defaults": {
+      "bellStyle": "none",
+      "colorScheme": "VS Code Default Dark",
+      "intenseTextStyle": "all"
+    },
+    "list": [
+      {
+        "colorScheme": {
+          "dark": "VS Code Default Dark",
+          "light": "VS Code Default Light"
+        },
+        "elevate": false,
+        "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+        "hidden": false,
+        "name": "PowerShell",
+        "source": "Windows.Terminal.PowershellCore"
+      },
+      {
+        "colorScheme": {
+          "dark": "VS Code Default Dark",
+          "light": "VS Code Default Light"
+        },
+        "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
+        "elevate": true,
+        "guid": "{b34ba681-bb00-4fbb-9b2c-af482c43ad5d}",
+        "hidden": false,
+        "icon": "ms-appx:///ProfileIcons/pwsh.png",
+        "name": "PowerShell (Administrator)",
+        "startingDirectory": "%USERPROFILE%"
+      },
+      {
+        "colorScheme": {
+          "dark": "VS Code Default Dark",
+          "light": "VS Code Default Light"
+        },
+        "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+        "hidden": false,
+        "icon": "C:\\Users\\hayde\\OneDrive\\Pictures\\Icons\\ubuntu.ico",
+        "name": "Ubuntu",
+        "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+      },
+      {
+        "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "hidden": true,
+        "name": "Windows PowerShell 5.1"
+      },
+      {
+        "commandline": "%SystemRoot%\\System32\\cmd.exe",
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "hidden": false,
+        "name": "Command Prompt"
+      },
+      {
+        "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
+        "hidden": true,
+        "name": "Visual Studio Debug Console",
+        "source": "VSDebugConsole"
+      },
+      {
+        "colorScheme": {
+          "dark": "VS Code Default Dark",
+          "light": "VS Code Default Light"
+        },
+        "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+        "hidden": false,
+        "name": "Git Bash",
+        "source": "Git"
+      }
+    ]
+  },
+  "schemes": [
+    {
+      "background": "#181818",
+      "black": "#000000",
+      "blue": "#3465A4",
+      "brightBlack": "#555753",
+      "brightBlue": "#729FCF",
+      "brightCyan": "#34E2E2",
+      "brightGreen": "#8AE234",
+      "brightPurple": "#AD7FA8",
+      "brightRed": "#EF2929",
+      "brightWhite": "#EEEEEC",
+      "brightYellow": "#FCE94F",
+      "cursorColor": "#FFFFFF",
+      "cyan": "#06989A",
+      "foreground": "#D3D7CF",
+      "green": "#4E9A06",
+      "name": "VS Code Default Dark",
+      "purple": "#75507B",
+      "red": "#CC0000",
+      "selectionBackground": "#FFFFFF",
+      "white": "#D3D7CF",
+      "yellow": "#C4A000"
+    },
+    {
+      "background": "#F7F7F7",
+      "black": "#000000",
+      "blue": "#2B5387",
+      "brightBlack": "#909190",
+      "brightBlue": "#32609C",
+      "brightCyan": "#249E9E",
+      "brightGreen": "#108010",
+      "brightPurple": "#966E92",
+      "brightRed": "#DE2626",
+      "brightWhite": "#D4D4D4",
+      "brightYellow": "#8A7B04",
+      "cursorColor": "#000000",
+      "cyan": "#068D8F",
+      "foreground": "#555753",
+      "green": "#107C10",
+      "name": "VS Code Default Light",
+      "purple": "#75507B",
+      "red": "#CC0000",
+      "selectionBackground": "#141414",
+      "white": "#BDBDBD",
+      "yellow": "#7A6D03"
+    }
+  ],
+  "theme": "system",
+  "themes": []
+}
