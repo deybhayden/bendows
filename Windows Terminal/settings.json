@@ -1,0 +1,137 @@
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "actions": [
+    {
+      "command": "find",
+      "id": "User.find",
+      "keys": "ctrl+shift+f"
+    },
+    {
+      "command": "paste",
+      "id": "User.paste",
+      "keys": "ctrl+v"
+    },
+    {
+      "command": {
+        "action": "copy",
+        "singleLine": false
+      },
+      "id": "User.copy.644BA8F2",
+      "keys": "ctrl+c"
+    },
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto",
+        "splitMode": "duplicate"
+      },
+      "id": "User.splitPane.A6751878",
+      "keys": "alt+shift+d"
+    }
+  ],
+  "copyFormatting": "none",
+  "copyOnSelect": false,
+  "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+  "newTabMenu": [
+    {
+      "type": "remainingProfiles"
+    }
+  ],
+  "profiles": {
+    "defaults": {
+      "bellStyle": "none"
+    },
+    "list": [
+      {
+        "colorScheme": "Tango Dark (modified)",
+        "elevate": false,
+        "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+        "hidden": false,
+        "name": "PowerShell",
+        "source": "Windows.Terminal.PowershellCore"
+      },
+      {
+        "colorScheme": "Campbell",
+        "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
+        "elevate": true,
+        "guid": "{b34ba681-bb00-4fbb-9b2c-af482c43ad5d}",
+        "hidden": false,
+        "icon": "ms-appx:///ProfileIcons/pwsh.png",
+        "name": "PowerShell (Administrator)",
+        "startingDirectory": "%USERPROFILE%"
+      },
+      {
+        "colorScheme": "Tango Dark (modified)",
+        "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+        "hidden": false,
+        "icon": "C:\\Users\\hayde\\OneDrive\\Pictures\\Icons\\ubuntu.ico",
+        "name": "Ubuntu",
+        "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+      },
+      {
+        "colorScheme": "Campbell",
+        "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "hidden": true,
+        "name": "Windows PowerShell 5.1"
+      },
+      {
+        "commandline": "%SystemRoot%\\System32\\cmd.exe",
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "hidden": false,
+        "name": "Command Prompt"
+      },
+      {
+        "guid": "{d757a2f5-f1af-56be-9a7a-cd3b4a435841}",
+        "hidden": true,
+        "name": "Developer Command Prompt for VS 2022",
+        "source": "Windows.Terminal.VisualStudio"
+      },
+      {
+        "guid": "{5497b97a-2bfd-53cf-9ebb-907ba357d09e}",
+        "hidden": true,
+        "name": "Developer PowerShell for VS 2022",
+        "source": "Windows.Terminal.VisualStudio"
+      },
+      {
+        "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
+        "hidden": true,
+        "name": "Visual Studio Debug Console",
+        "source": "VSDebugConsole"
+      },
+      {
+        "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+        "hidden": false,
+        "name": "Git Bash",
+        "source": "Git"
+      }
+    ]
+  },
+  "schemes": [
+    {
+      "background": "#181818",
+      "black": "#000000",
+      "blue": "#3465A4",
+      "brightBlack": "#555753",
+      "brightBlue": "#729FCF",
+      "brightCyan": "#34E2E2",
+      "brightGreen": "#8AE234",
+      "brightPurple": "#AD7FA8",
+      "brightRed": "#EF2929",
+      "brightWhite": "#EEEEEC",
+      "brightYellow": "#FCE94F",
+      "cursorColor": "#FFFFFF",
+      "cyan": "#06989A",
+      "foreground": "#D3D7CF",
+      "green": "#4E9A06",
+      "name": "Tango Dark (modified)",
+      "purple": "#75507B",
+      "red": "#CC0000",
+      "selectionBackground": "#FFFFFF",
+      "white": "#D3D7CF",
+      "yellow": "#C4A000"
+    }
+  ],
+  "themes": []
+}
