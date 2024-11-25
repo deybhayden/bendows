@@ -1,37 +1,20 @@
 # Installation Notes
 
-These are steps I recorded setting up a on a Dell XPS
+Basic steps on setting up a new Windows machine.
 
-Dell Warranty
-Sign into Google in Microsoft Edge
-Update App Installer (for winget)
-winget search vscode
-winget install vscode
-open vscode, sign into GitHub for settings sync
-winget install slack -s winget
-plugin logitech mouse, install logi options
-wsl --install
-reboot
-winget install Zoom.Zoom
-remap caps to control via keyboard
-vscode add Cascadia Code in font family
-vscode install WSL extension
-running code inside of ubuntu will install code server
-winget install Docker.DockerDesktop -s winget
-winget install Figma.Figma -s winget
+- Create 512 GB Dev Drive at `D:\`
+- Sign into Google in Microsoft Edge
+- Review `bendows-install.ps1` and run each winget individually
+- `wsl --install`
+- reboot
 
 ## Git Bash Set up
 
 ```shell
 # copy .bash_profile to home directory
 # open git bash as an admin
-cp Repos/bendows/.gitconfig /c/Users/hayde/.gitconfig
-ln -sf Repos/bendows/.bashrc /c/Users/hayde/.bashrc
+cp .gitattributes_global .gitignore_global .gitconfig /c/Users/hayde/
 ```
-
-## Installing NordLayer
-
-NordLayer isn't available on winget, so go here: [Nordlayer Windows Download](https://nordlayer.com/download/windows/)
 
 ### DNS
 
