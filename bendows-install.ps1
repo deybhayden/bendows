@@ -31,6 +31,7 @@ try {
         winget install "Visual Studio Community 2022"  --override "--add Microsoft.VisualStudio.Workload.ManagedDesktop Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cs" -s msstore
         winget install Amazon.AWSCLI -s winget
         winget install Hashicorp.Terraform -s winget
+        winget install Piriform.CCleaner -s winget
         winget install OpenJS.NodeJS.LTS -s winget
         winget install Python.Python.3.10 -s winget
         winget install Amazon.NoSQLWorkbench -s winget
