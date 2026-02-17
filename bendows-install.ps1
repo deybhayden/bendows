@@ -12,6 +12,7 @@ try {
         winget install Microsoft.Powershell -s winget
         winget install Microsoft.PowerToys -s winget
         winget install OpenJS.NodeJS.LTS -s winget
+        winget install BurntSushi.ripgrep.GNU -s winget
         winget install SlackTechnologies.Slack -s winget
         winget install Discord.Discord -s winget
         winget install Zoom.Zoom -s winget
