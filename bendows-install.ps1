@@ -37,6 +37,7 @@ try {
         winget install WinSCP.WinSCP -s winget
         winget install dotPDN.PaintDotNet -s winget
         winget install OBSProject.OBSStudio -s winget
+        winget install Balena.Etcher -s winget
 
         Write-Output "Installing WSL, reboot will be required"
         wsl --install
