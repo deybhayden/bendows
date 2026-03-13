@@ -24,6 +24,7 @@ if (
         InlinePrediction = "$($PSStyle.Foreground.FromRgb(0x7A, 0x7A, 0x7A))"
     }
 
+    $PSStyle.FileInfo.Directory = "$($PSStyle.Foreground.FromRgb(0x0B, 0x63, 0x7F))"
 }
 
 # End accepts suggestion
