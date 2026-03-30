@@ -42,6 +42,7 @@ try {
         mkdir -p ~/.pi/agent
         ln -sf "$PWD"/.pi/agent/skills/ ~/.pi/agent/skills
         ln -sf "$PWD"/.pi/agent/extensions/ ~/.pi/agent/extensions
+        ln -sf "$PWD"/.pi/agent/keybindings.json ~/.pi/agent/keybindings.json
 
         Write-Output "Installing WSL, reboot will be required"
         wsl --install
