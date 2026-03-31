@@ -2,6 +2,10 @@
 
 Docker Desktop uses WSL2 and we set up WSL2 for Ubuntu in this repo.
 
+## WSL Config
+
+Copy [.wslconfig](.wslconfig) to your `$HOME` so mirroring mode is enabled (services running on Linux or Windows can see each other) and limit the default disk size to 200GB (instead of 1TB).
+
 ## Disk Space Management
 
 VHDX files (more about these files and storage mgmt [here](https://learn.microsoft.com/en-us/windows/wsl/disk-space)) grow indefinitely and can end up eating a lot of disk space - even when you purge the docker images/containers (see [thread](https://github.com/docker/for-win/issues/244)).
