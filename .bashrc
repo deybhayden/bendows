@@ -83,6 +83,11 @@ function gsmash() {
   git push origin "$(git_current_branch)" --force-with-lease
 }
 
+# github cli
+alias gha="gh auth status"
+alias ghl="gh auth login"
+alias ghs="gh auth switch"
+
 # hooks
 export _unmangle_direnv_names='PATH'
 _unmangle_direnv_paths() {
