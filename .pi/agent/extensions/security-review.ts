@@ -39,11 +39,13 @@ import {
 import path from "node:path";
 import { promises as fs } from "node:fs";
 import {
+  getLatestCustomState,
   hasUpstreamTrackingBranch,
   isSelectListActionInput,
   parseReviewPathsInput,
   tokenizeSpaceSeparated,
 } from "./_shared/review-utils.js";
+import { registerReloadableEventBusListener } from "./_shared/reloadable-event-bus.js";
 import { runPreflightScan, type ScanScope } from "./security-scan.js";
 import {
   BASE_BRANCH_PROMPT_FALLBACK as SHARED_BASE_BRANCH_PROMPT_FALLBACK,
@@ -56,6 +58,10 @@ import {
   PULL_REQUEST_PROMPT_FALLBACK as SHARED_PULL_REQUEST_PROMPT_FALLBACK,
   UNCOMMITTED_PROMPT as SHARED_UNCOMMITTED_PROMPT,
 } from "./_shared/review-prompts.js";
+import {
+  COLLECT_END_TARGETS_EVENT,
+  type CollectEndTargetsEvent,
+} from "./_shared/end-events.js";
 
 // ─── Module-level state ──────────────────────────────────────────────────────
 let securityReviewOriginId: string | undefined = undefined;
@@ -79,10 +85,7 @@ function setSecurityReviewWidget(ctx: ExtensionContext, active: boolean) {
 
   ctx.ui.setWidget("security-review", (_tui, theme) => {
     const text = new Text(
-      theme.fg(
-        "warning",
-        "Security review session active, return with /end-security-review",
-      ),
+      theme.fg("warning", "Security review session active, return with /end"),
       0,
       0,
     );
@@ -100,16 +103,10 @@ function setSecurityReviewWidget(ctx: ExtensionContext, active: boolean) {
 function getSecurityReviewState(
   ctx: ExtensionContext,
 ): SecurityReviewSessionState | undefined {
-  let state: SecurityReviewSessionState | undefined;
-  for (const entry of ctx.sessionManager.getBranch()) {
-    if (
-      entry.type === "custom" &&
-      entry.customType === SECURITY_REVIEW_STATE_TYPE
-    ) {
-      state = entry.data as SecurityReviewSessionState | undefined;
-    }
-  }
-  return state;
+  return getLatestCustomState<SecurityReviewSessionState>(
+    ctx,
+    SECURITY_REVIEW_STATE_TYPE,
+  );
 }
 
 function applySecurityReviewState(ctx: ExtensionContext) {
@@ -1179,7 +1176,7 @@ export default function securityReviewExtension(pi: ExtensionAPI) {
   ): Promise<void> {
     if (securityReviewOriginId) {
       ctx.ui.notify(
-        "Already in a security review. Use /end-security-review to finish first.",
+        "Already in a security review. Use /end to finish first.",
         "warning",
       );
       return;
@@ -1412,7 +1409,7 @@ ${preflightReport}`;
 
       if (securityReviewOriginId) {
         ctx.ui.notify(
-          "Already in a security review. Use /end-security-review to finish first.",
+          "Already in a security review. Use /end to finish first.",
           "warning",
         );
         return;
@@ -1572,12 +1569,12 @@ Instructions:
     ctx: ExtensionCommandContext,
   ): Promise<void> {
     if (!ctx.hasUI) {
-      ctx.ui.notify("End-security-review requires interactive mode", "error");
+      ctx.ui.notify("/end requires interactive mode", "error");
       return;
     }
 
     if (endSecurityReviewInProgress) {
-      ctx.ui.notify("/end-security-review is already running", "info");
+      ctx.ui.notify("/end is already running", "info");
       return;
     }
 
@@ -1605,10 +1602,7 @@ Instructions:
       ]);
 
       if (choice === undefined) {
-        ctx.ui.notify(
-          "Cancelled. Use /end-security-review to try again.",
-          "info",
-        );
+        ctx.ui.notify("Cancelled. Use /end to try again.", "info");
         return;
       }
 
@@ -1626,7 +1620,7 @@ Instructions:
           });
           if (result.cancelled) {
             ctx.ui.notify(
-              "Navigation cancelled. Use /end-security-review to try again.",
+              "Navigation cancelled. Use /end to try again.",
               "info",
             );
             return;
@@ -1677,7 +1671,7 @@ Instructions:
 
       if (summaryResult === null) {
         ctx.ui.notify(
-          "Summarization cancelled. Use /end-security-review to try again.",
+          "Summarization cancelled. Use /end to try again.",
           "info",
         );
         return;
@@ -1689,10 +1683,7 @@ Instructions:
       }
 
       if (summaryResult.cancelled) {
-        ctx.ui.notify(
-          "Navigation cancelled. Use /end-security-review to try again.",
-          "info",
-        );
+        ctx.ui.notify("Navigation cancelled. Use /end to try again.", "info");
         return;
       }
 
@@ -1722,12 +1713,21 @@ Instructions:
     }
   }
 
-  // ── /end-security-review command ─────────────────────────────────────────
+  registerReloadableEventBusListener(
+    pi,
+    "security-review:collect-end-targets",
+    COLLECT_END_TARGETS_EVENT,
+    (event) => {
+      const { ctx, targets } = event as CollectEndTargetsEvent;
+      if (!getSecurityReviewState(ctx)?.active) {
+        return;
+      }
 
-  pi.registerCommand("end-security-review", {
-    description: "Complete security review and return to original position",
-    handler: async (_args, ctx) => {
-      await runEndSecurityReview(ctx);
+      targets.push({
+        key: "security-review",
+        label: "Security review",
+        run: () => runEndSecurityReview(ctx),
+      });
     },
-  });
+  );
 }

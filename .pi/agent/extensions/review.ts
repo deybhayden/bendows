@@ -41,11 +41,13 @@ import {
 import path from "node:path";
 import { promises as fs } from "node:fs";
 import {
+  getLatestCustomState,
   hasUpstreamTrackingBranch,
   isSelectListActionInput,
   parseReviewPathsInput,
   tokenizeSpaceSeparated,
 } from "./_shared/review-utils.js";
+import { registerReloadableEventBusListener } from "./_shared/reloadable-event-bus.js";
 import {
   BASE_BRANCH_PROMPT_FALLBACK as SHARED_BASE_BRANCH_PROMPT_FALLBACK,
   BASE_BRANCH_PROMPT_WITH_MERGE_BASE as SHARED_BASE_BRANCH_PROMPT_WITH_MERGE_BASE,
@@ -58,10 +60,14 @@ import {
   REVIEW_RUBRIC as SHARED_REVIEW_RUBRIC,
   UNCOMMITTED_PROMPT as SHARED_UNCOMMITTED_PROMPT,
 } from "./_shared/review-prompts.js";
+import {
+  COLLECT_END_TARGETS_EVENT,
+  type CollectEndTargetsEvent,
+} from "./_shared/end-events.js";
 
 // State to track fresh session review (where we branched from).
 // Module-level state means only one review can be active at a time.
-// This is intentional - the UI and /end-review command assume a single active review.
+// This is intentional - the UI and /end flow assume a single active review.
 let reviewOriginId: string | undefined = undefined;
 let endReviewInProgress = false;
 
@@ -81,7 +87,7 @@ function setReviewWidget(ctx: ExtensionContext, active: boolean) {
 
   ctx.ui.setWidget("review", (_tui, theme) => {
     const text = new Text(
-      theme.fg("warning", "Review session active, return with /end-review"),
+      theme.fg("warning", "Review session active, return with /end"),
       0,
       0,
     );
@@ -97,14 +103,7 @@ function setReviewWidget(ctx: ExtensionContext, active: boolean) {
 }
 
 function getReviewState(ctx: ExtensionContext): ReviewSessionState | undefined {
-  let state: ReviewSessionState | undefined;
-  for (const entry of ctx.sessionManager.getBranch()) {
-    if (entry.type === "custom" && entry.customType === REVIEW_STATE_TYPE) {
-      state = entry.data as ReviewSessionState | undefined;
-    }
-  }
-
-  return state;
+  return getLatestCustomState<ReviewSessionState>(ctx, REVIEW_STATE_TYPE);
 }
 
 function applyReviewState(ctx: ExtensionContext) {
@@ -1021,7 +1020,7 @@ export default function reviewExtension(pi: ExtensionAPI) {
     // Check if we're already in a review
     if (reviewOriginId) {
       ctx.ui.notify(
-        "Already in a review. Use /end-review to finish first.",
+        "Already in a review. Use /end to finish first.",
         "warning",
       );
       return;
@@ -1239,7 +1238,7 @@ export default function reviewExtension(pi: ExtensionAPI) {
       // Check if we're already in a review
       if (reviewOriginId) {
         ctx.ui.notify(
-          "Already in a review. Use /end-review to finish first.",
+          "Already in a review. Use /end to finish first.",
           "warning",
         );
         return;
@@ -1395,12 +1394,12 @@ Instructions:
 
   async function runEndReview(ctx: ExtensionCommandContext): Promise<void> {
     if (!ctx.hasUI) {
-      ctx.ui.notify("End-review requires interactive mode", "error");
+      ctx.ui.notify("/end requires interactive mode", "error");
       return;
     }
 
     if (endReviewInProgress) {
-      ctx.ui.notify("/end-review is already running", "info");
+      ctx.ui.notify("/end is already running", "info");
       return;
     }
 
@@ -1429,7 +1428,7 @@ Instructions:
       ]);
 
       if (choice === undefined) {
-        ctx.ui.notify("Cancelled. Use /end-review to try again.", "info");
+        ctx.ui.notify("Cancelled. Use /end to try again.", "info");
         return;
       }
 
@@ -1445,7 +1444,7 @@ Instructions:
           const result = await ctx.navigateTree(originId, { summarize: false });
           if (result.cancelled) {
             ctx.ui.notify(
-              "Navigation cancelled. Use /end-review to try again.",
+              "Navigation cancelled. Use /end to try again.",
               "info",
             );
             return;
@@ -1496,7 +1495,7 @@ Instructions:
 
       if (summaryResult === null) {
         ctx.ui.notify(
-          "Summarization cancelled. Use /end-review to try again.",
+          "Summarization cancelled. Use /end to try again.",
           "info",
         );
         return;
@@ -1508,10 +1507,7 @@ Instructions:
       }
 
       if (summaryResult.cancelled) {
-        ctx.ui.notify(
-          "Navigation cancelled. Use /end-review to try again.",
-          "info",
-        );
+        ctx.ui.notify("Navigation cancelled. Use /end to try again.", "info");
         return;
       }
 
@@ -1539,11 +1535,21 @@ Instructions:
     }
   }
 
-  // Register the /end-review command
-  pi.registerCommand("end-review", {
-    description: "Complete review and return to original position",
-    handler: async (_args, ctx) => {
-      await runEndReview(ctx);
+  registerReloadableEventBusListener(
+    pi,
+    "review:collect-end-targets",
+    COLLECT_END_TARGETS_EVENT,
+    (event) => {
+      const { ctx, targets } = event as CollectEndTargetsEvent;
+      if (!getReviewState(ctx)?.active) {
+        return;
+      }
+
+      targets.push({
+        key: "review",
+        label: "Review",
+        run: () => runEndReview(ctx),
+      });
     },
-  });
+  );
 }
