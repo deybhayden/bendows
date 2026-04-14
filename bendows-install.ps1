@@ -39,6 +39,7 @@ try {
         winget install dotPDN.PaintDotNet -s winget
         winget install OBSProject.OBSStudio -s winget
         winget install sharkdp.fd -s winget
+        winget install JGraph.Draw -s winget
         
         mkdir -p ~/.pi/agent
         ln -sf "$PWD"/.pi/agent/skills/ ~/.pi/agent/skills
