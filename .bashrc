@@ -18,17 +18,6 @@ function agent-browser() {
   fi
 }
 
-# pi
-function pi() {
-  if [[ "$1" == "update" ]]; then
-    npm install -g @mariozechner/pi-coding-agent --loglevel=error
-    echo -e "\033[0;32mPi updated.\033[0m"
-    command pi update
-  else
-    command pi "$@"
-  fi
-}
-
 # directories
 alias ..="cd .."
 alias .r="cd ~/Repos"
