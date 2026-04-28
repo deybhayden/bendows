@@ -33,3 +33,16 @@ Set-PSReadLineKeyHandler -Key End -ScriptBlock {
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptSuggestion($key, $arg)
     [Microsoft.PowerShell.PSConsoleReadLine]::EndOfLine($key, $arg)
 }
+
+# Llama functions
+function Start-Gemma {
+    $llamaServer = Get-Command llama-server.exe -ErrorAction SilentlyContinue
+    if (-not $llamaServer) {
+        Write-Error 'llama-server.exe was not found in PATH.'
+        return
+    }
+
+    & $llamaServer.Source `
+        -hf 'ggml-org/gemma-4-26b-a4b-it-GGUF:Q4_K_M' `
+        --jinja
+}
