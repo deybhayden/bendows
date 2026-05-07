@@ -44,7 +44,6 @@ Run [Win11Debloat](https://github.com/Raphire/Win11Debloat) with the default set
 - `MSTeams`
 - `Microsoft.WindowsAlarms`
 - `Microsoft.WindowsSoundRecorder`
-- `Outlook for Windows`
 
 ## Node packages
 
