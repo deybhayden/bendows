@@ -51,3 +51,16 @@ Run [Win11Debloat](https://github.com/Raphire/Win11Debloat) with the default set
 $ npm install -g @mariozechner/pi-coding-agent agent-browser
 $ agent-browser install
 ```
+
+## Power Toys
+
+Turn off PowerToys Run, remap Command Palette to Alt+Space
+
+### Command Palette
+
+- Turn off web search
+- Set up VS Code extension
+
+Set up an alias like below:
+
+<img src="images/vscode-alias.png" alt="vscode alias" width="600">
