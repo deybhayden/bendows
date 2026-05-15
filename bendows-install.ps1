@@ -41,6 +41,7 @@ try {
         winget install sharkdp.fd -s winget
         winget install JGraph.Draw -s winget
         winget install 15722UsefulApp.WorkspaceLauncherForVSCode
+        winget install yt-dlp.yt-dlp
         
         mkdir -p ~/.pi/agent
         ln -sf "$PWD"/.pi/agent/skills/ ~/.pi/agent/skills
