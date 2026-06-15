@@ -108,3 +108,39 @@ function Start-Gemma {
         -hf 'ggml-org/gemma-4-26b-a4b-it-GGUF:Q4_K_M' `
         --jinja
 }
+
+# ssh completions
+Register-ArgumentCompleter -Native -CommandName ssh, scp, sftp -ScriptBlock {
+    param($wordToComplete, $commandAst, $cursorPosition)
+
+    $hosts = @()
+
+    $sshConfig = "$HOME\.ssh\config"
+    if (Test-Path $sshConfig) {
+        $hosts += Get-Content $sshConfig |
+        Where-Object { $_ -match '^\s*Host\s+(.+)$' } |
+        ForEach-Object {
+            $matches[1] -split '\s+'
+        } |
+        Where-Object { $_ -notmatch '[*?]' }
+    }
+
+    $knownHosts = "$HOME\.ssh\known_hosts"
+    if (Test-Path $knownHosts) {
+        $hosts += Get-Content $knownHosts |
+        Where-Object { $_ -notmatch '^\|' } |
+        ForEach-Object {
+            ($_ -split '\s+')[0] -split ','
+        } |
+        ForEach-Object {
+            $_ -replace '^\[|\].*$', ''
+        }
+    }
+
+    $hosts |
+    Sort-Object -Unique |
+    Where-Object { $_ -like "$wordToComplete*" } |
+    ForEach-Object {
+        [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+    }
+}
