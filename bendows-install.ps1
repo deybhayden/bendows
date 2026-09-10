@@ -13,7 +13,6 @@ try {
         winget install Microsoft.NuGet -s winget
         winget install BurntSushi.ripgrep.GNU -s winget
         winget install SlackTechnologies.Slack -s winget
-        winget install Zoom.Zoom -s winget
         winget install Logitech.OptionsPlus -s winget
         winget install Logitech.GHUB -s winget
         winget install AntibodySoftware.WizTree -s winget
