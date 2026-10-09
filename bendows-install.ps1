@@ -40,6 +40,7 @@ try {
         winget install JGraph.Draw -s winget
         winget install 15722UsefulApp.WorkspaceLauncherForVSCode -s winget
         winget install yt-dlp.yt-dlp -s winget
+        winget install calibre.calibre -s winget
         
         mkdir -p ~/.pi/agent
         ln -sf "$PWD"/.pi/agent/skills/ ~/.pi/agent/skills
