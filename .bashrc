@@ -3,6 +3,7 @@
 # exports
 export EDITOR="code -w"
 export HISTCONTROL=ignoreboth:erasedups
+export PATH="$HOME/.pi/agent/bin:$PATH"
 
 # misc
 alias src="source $HOME/.bash_profile"
